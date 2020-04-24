@@ -1,0 +1,56 @@
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@500&display=swap');
+@import 'bourbon';
+
+$font-stack-baloo: 'Baloo Tammudu 2', cursive;
+$primary-color: #f82ae7;
+$white: #fff;
+
+body {
+    font-family: $font-stack-baloo;
+}
+
+
+.btn-new-primary {
+
+
+    // &:hover {
+    //     background-color:red;
+    // }
+
+    // &:active {
+    //     box-shadow: -2px 2px 0 shade($primary-color, 40%);
+    //     top: 2px;
+    //     left: -2px;
+    //     position: relative;
+    // }
+
+}
+
+.btn {
+    background-color: $primary-color;
+    border-radius: 0;
+    box-shadow: -4px 4px 0 shade($primary-color, 20%);
+    border: solid 1px $primary-color;
+    color: $white;
+    position: relative;
+    box-sizing: border-box;
+    
+    &:hover, &:focus {
+        outline: none;
+        border: solid 1px shade($primary-color, 20%);
+        color: $white;
+        cursor: pointer;
+        position: relative;
+    }
+
+    &:active {
+        top: 4px;
+        left: -4px;
+        box-shadow: -2px 2px 0 shade($pink, 30%);
+        position: relative;
+        outline: none;
+    }
+}
+
+
