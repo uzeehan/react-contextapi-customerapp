@@ -1,19 +1,40 @@
 import React, { Component } from 'react';
-import Contacts from './Contacts';
 import PropTypes from 'prop-types';
 
 
-export class Contact extends Component {    
+export class Contact extends Component {   
+    
+    state = {
+        showContactInfo: false
+    }
+
+    // onShowClick = (e) => {
+    //     this.setState({
+    //         showContactInfo: !this.state.showContactInfo
+    //     })
+    // }
     render() {
-        const { id, name, phone, email } = this.props.contact;
+        const { name, phone, email } = this.props.contact;
+        const { showContactInfo } = this.state;
         return (
             <div className="card">
                 <div className="card-body">
-                    <h3 className="card-title">{name}</h3>
-                    <p className="card-text">
-                        {email} <br />
-                        {phone}</p>
-                    <a href="javascript:void(0);" className="btn-new-primary">read more</a>
+                    <h3 onClick={() => {
+                            this.setState({
+                                showContactInfo: !this.state.showContactInfo
+                            })
+                        }}  className="card-title">{name} {' '}
+                        <i className="fas fa-sort-down"></i>
+                    </h3>
+                    {
+                        showContactInfo ? (
+                            <p className="card-text">
+                                Email: {email} <br />
+                                Phone: {phone} <br/><br/>
+                                <a href="/" className="btn-new-primary">read more</a>
+                            </p>
+                        ) : null
+                    }
                 </div>
             </div>    
         )
