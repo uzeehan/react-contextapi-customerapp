@@ -1,11 +1,11 @@
 import React from 'react';
-import Customers from './components/customer/Customers';
+import Contacts from './components/customer/Contacts';
 import './scss/main.scss';
 
 function App() {
   return (
     <div className="App container">
-      <Customers />
+      <Contacts />
     </div>
   );
 }
