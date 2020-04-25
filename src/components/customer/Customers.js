@@ -33,7 +33,7 @@ export class Customers extends Component {
                                     <p className="card-text">
                                         {contact.email} <br />
                                         {contact.phone}</p>
-                                    <a href="javascript:void(0)" className="btn btn-new-primary">read more</a>
+                                    <a href="javascript:void(0)" className="btn-new-primary">read more</a>
                                 </div>
                             </div>                            
                         )
