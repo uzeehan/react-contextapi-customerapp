@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Contacts from './Contacts';
+import PropTypes from 'prop-types';
+
 
 export class Contact extends Component {    
     render() {
@@ -11,11 +13,15 @@ export class Contact extends Component {
                     <p className="card-text">
                         {email} <br />
                         {phone}</p>
-                    <a href="" className="btn-new-primary">read more</a>
+                    <a href="javascript:void(0);" className="btn-new-primary">read more</a>
                 </div>
             </div>    
         )
     }
 }
 
-export default Contact
+Contact.propTypes = {
+    contact: PropTypes.object.isRequired
+}
+
+export default Contact;
