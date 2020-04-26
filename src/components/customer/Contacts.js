@@ -12,8 +12,18 @@ export class Contacts extends Component {
         ]
     }
 
+    onDeleteContact = (id) => {
+        const { contacts } = this.state;
+        const newContacts = contacts.filter((contact) => { return contact.id !== id});
+        this.setState({
+            contacts: newContacts
+        });
+        console.log(id);
+    }
+
     render() {
         const { contacts } = this.state;
+        
         return (
             <div className="container mt-3 pt-3">
                 <h1>Customers List</h1>
@@ -23,6 +33,7 @@ export class Contacts extends Component {
                             <Contact 
                                 key={contact.id}
                                 contact={contact}
+                                onDeleteContactHandler={this.onDeleteContact.bind(this, contact.id)}
                             />
                         )
                     })

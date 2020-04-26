@@ -27,6 +27,10 @@ body {
     padding: 4px;
     border-radius: 0;
     box-shadow: 4px -4px 0 shade($primary-color, 60%);
+
+    i {
+        cursor: pointer;
+    }
 }
 
 
