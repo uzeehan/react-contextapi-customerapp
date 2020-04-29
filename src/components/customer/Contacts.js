@@ -13,14 +13,14 @@ export class Contacts extends Component {
     //     ]
     // }
 
-    onDeleteContact = (id) => {
-        const { contacts } = this.state;
-        const newContacts = contacts.filter((contact) => { return contact.id !== id});
-        this.setState({
-            contacts: newContacts
-        });
-        console.log(id);
-    }
+    // onDeleteContact = (id) => {
+    //     const { contacts } = this.state;
+    //     const newContacts = contacts.filter((contact) => { return contact.id !== id});
+    //     this.setState({
+    //         contacts: newContacts
+    //     });
+    //     console.log(id);
+    // }
 
     render() {
 
@@ -37,7 +37,6 @@ export class Contacts extends Component {
                                     <Contact 
                                         key={contact.id}
                                         contact={contact}
-                                        onDeleteContactHandler={this.onDeleteContact.bind(this, contact.id)}
                                     />
                                 )
                             })
