@@ -26,7 +26,7 @@ export class Contact extends Component {
                     return (
                         <div className="card">
                             <div className="card-body">
-                                <h3 className="card-title">{contact.name} {' '}
+                                <h4 className="card-title">{contact.name} {' '}
                                     <i className="fas fa-sort-down"
                                         onClick={() => {
                                             this.setState({
@@ -35,7 +35,7 @@ export class Contact extends Component {
                                         }}></i>
                                     <i className="fas fa-times" style={{ float: "right", color: "red" }}
                                         onClick={this.onDeleteClick.bind(this, contact.id, dispatch)}></i>
-                                </h3>
+                                </h4>
                                 {
                                     showContactInfo ? (
                                         <p className="card-text">

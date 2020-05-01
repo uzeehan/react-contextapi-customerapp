@@ -30,7 +30,7 @@ export class Contacts extends Component {
                     const { contacts } = value;
                     return (
                         <div className="container mt-3 pt-3">
-                        <h1>Customers List</h1>
+                        <h3>CUSTOMER LIST</h3>
                         {
                             contacts.map((contact) => {
                                 return (
