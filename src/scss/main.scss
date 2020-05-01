@@ -21,6 +21,10 @@ body {
     padding: 30px;
 }
 
+h1, h2, h3 {
+    color: $primary-color;
+}
+
 .card {
     box-sizing: border-box;
     width: 30%;
