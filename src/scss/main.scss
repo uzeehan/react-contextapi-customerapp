@@ -25,6 +25,30 @@ h1, h2, h3 {
     color: $primary-color;
 }
 
+// header - navbar
+.navbar-nav {
+    display: inline-flex;
+    list-style-type: none;
+    position: relative;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+
+    li {
+        margin-left: 15px;
+        line-height: 20px;
+        font-size: 20px;        
+    }
+    li a {
+        padding: 4px 16px 0 16px;
+        line-height: 20px;
+        font-size: 20px;    
+        color: $primary-color;    
+    }
+}
+
+
+
 .card {
     box-sizing: border-box;
     width: 30%;

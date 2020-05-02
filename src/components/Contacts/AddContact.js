@@ -78,7 +78,7 @@ export class AddContact extends Component {
                     const { dispatch } = value;
                     return (
                         <div className="col-md-12">
-                            <h3>ADD CONTACT</h3>
+                            <h1 className="text-display-4">ADD CONTACT</h1>
                             <form onSubmit={this.onSubmitAddContact.bind(this, dispatch)} >
                                 <TextInputGroup
                                     label="Name"
