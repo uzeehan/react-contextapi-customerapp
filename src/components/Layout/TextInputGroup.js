@@ -1,19 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 
-const TextInputGroup = ({ label, name, placeholder, type, value, onChange }) => {
+const TextInputGroup = ({ label, name, placeholder, type, value, onChange, error }) => {
     // const { } = props;
     return (
         <div className="form-group row">
             <label htmlFor={name} className="col-md-2">{label}</label>
             <input type={type} 
                 name={name} 
-                className="form-control col-md-10"
+                className= {classnames('form-control col-md-10', 
+                {
+                    'is-invalid': error
+                })}
                 placeholder={placeholder}
                 value={value}
                 type= {type}
                 onChange={onChange} />
+            { error && <div className="invalid-feedback">{error}</div> }
+            
         </div>
     )
 }
