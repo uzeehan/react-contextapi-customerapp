@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import About from './components/Pages/About';
 import NotFound from './components/Pages/NotFound';
 import Header from './components/Layout/Header';
+import Testpage from './components/Pages/Testpage';
 import './scss/main.scss';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Route exact path="/" component={Contacts} />
             <Route path="/contact/add" component={AddContact} />
             <Route path="/about" component={About} />
+            <Route path="/test" component={Testpage} />
             <Route component={NotFound} />
           </Switch>
         </div>
