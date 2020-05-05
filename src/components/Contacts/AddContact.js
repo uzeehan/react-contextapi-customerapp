@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Consumer } from '../../Context';
 import TextInputGroup from '../Layout/TextInputGroup';
-import uuid from 'react-uuid';
+// import uuid from 'react-uuid';
+import axios from 'axios';
 
 export class AddContact extends Component {
 
@@ -19,14 +20,14 @@ export class AddContact extends Component {
     })
 
     // submit form 
-    onSubmitAddContact = (dispatch, e) => {
+    onSubmitAddContact = async (dispatch, e) => {
         e.preventDefault();
         // pull out properties from the component state
         const { name, email, phone } = this.state;
 
         // create a new contact
         const newContact = {
-            id: uuid(),
+            // id: uuid(),
             name: name,
             email: email,
             phone: phone
@@ -52,19 +53,37 @@ export class AddContact extends Component {
             return;
         }
 
-
-        // dispatch
+        // post request 
+        // axios.post('https://jsonplaceholder.typicode.com/users', newContact)
+        // .then(res => console.log(res.data))
+        const res = await axios.post('https://jsonplaceholder.typicode.com/users', newContact);
         dispatch({
             type: 'ADD_CONTACT',
-            payload: newContact
+            payload: res.data
         });
+
+        // axios.post('https://jsonplaceholder.typicode.com/users', newContact)
+        // .then(res => dispatch({
+        //     type: 'ADD_CONTACT',
+        //     payload: res.data
+        // }))
+
+
+        // dispatch
+        // dispatch({
+        //     type: 'ADD_CONTACT',
+        //     payload: newContact
+        // });
 
         this.setState({
             name: '',
             email: '',
             phone: ''
         })
-        console.log(this.state);
+
+        this.props.history.push('/');
+
+        // console.log(this.state);
     }
 
 

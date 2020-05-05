@@ -8,6 +8,7 @@ import NotFound from './components/Pages/NotFound';
 import Header from './components/Layout/Header';
 import Testpage from './components/Pages/Testpage';
 import './scss/main.scss';
+import EditContact from './components/Contacts/EditContact';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Contacts} />
             <Route path="/contact/add" component={AddContact} />
+            <Route path="/contact/edit/:id" component={EditContact} />
             <Route path="/about" component={About} />
             <Route path="/test" component={Testpage} />
             <Route component={NotFound} />

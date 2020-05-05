@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Consumer } from '../../Context';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 
 export class Contact extends Component {
@@ -9,13 +11,31 @@ export class Contact extends Component {
         showContactInfo: false
     }
 
-    onDeleteClick = (id, dispatch) => {
+    // onDeleteClick = (id, dispatch) => {
+    //     console.log("Clicked");
+
+    //     axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`)
+    //     .then(res => dispatch({
+    //         type: 'DELETE_CONTACT',
+    //         payload: id
+    //     }));
+
+    //     // dispatch({
+    //     //     type: 'DELETE_CONTACT',
+    //     //     payload: id
+    //     // });
+    // };
+    onDeleteClick = async (id, dispatch) => {
         console.log("Clicked");
+
+        const res = axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`);
+
         dispatch({
-            type: "DELETE_CONTACT",
+            type: 'DELETE_CONTACT',
             payload: id
-        });
-    }
+        })
+    };
+
     render() {
         const { contact } = this.props;
         const { showContactInfo } = this.state;
@@ -35,12 +55,15 @@ export class Contact extends Component {
                                         }}></i>
                                     <i className="fas fa-times" style={{ float: "right", color: "red" }}
                                         onClick={this.onDeleteClick.bind(this, contact.id, dispatch)}></i>
+                                    <Link to={`contact/edit/${contact.id}`} >
+                                        <i className="fas fa-pencil-alt"></i>
+                                    </Link>
                                 </h4>
                                 {
                                     showContactInfo ? (
                                         <p className="card-text">
-                                            Email: {contact.email} <br />
-                                        Phone: {contact.phone} <br /><br />
+                                            <span>Email: {contact.email}</span> <br />
+                                            <span>Phone: {contact.phone}</span> <br /><br />
                                             <a href="/" className="btn-new-primary">read more</a>
                                         </p>
                                     ) : null
