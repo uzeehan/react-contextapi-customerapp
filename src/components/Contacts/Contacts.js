@@ -47,7 +47,7 @@ export class Contacts extends Component {
             </Consumer>
         )
 
-        const { contacts } = this.state;
+        // const { contacts } = this.state;
         
         // return (
         //     <div className="container mt-3 pt-3">

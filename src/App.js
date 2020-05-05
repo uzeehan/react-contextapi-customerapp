@@ -2,7 +2,7 @@ import React from 'react';
 import Contacts from './components/Contacts/Contacts';
 import AddContact from './components/Contacts/AddContact';
 import { Provider } from './Context';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import About from './components/Pages/About';
 import NotFound from './components/Pages/NotFound';
 import Header from './components/Layout/Header';
